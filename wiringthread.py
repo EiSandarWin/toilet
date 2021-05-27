@@ -230,7 +230,7 @@ def start():
                     
                 store_log(duration + "\n 男子トイレ使用終了\n")
                 #user_id = logTable.insert_table(1, current_date, current_time, 2, "Boy Free", duration=duration)
-                status("Free")
+                status("Busy")
                 print (duration)
                 print ("\n男子トイレ使用終了")
                 temp_count = logcount
@@ -243,6 +243,7 @@ def start():
                 start_blink = threading.Thread(target=blink_led, args=())
                 start_blink.start()
                 status_blink = True
+                status("Free")
         if read0 == read1:
             continue
 
